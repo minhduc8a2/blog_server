@@ -9,7 +9,7 @@ const PostSchema = mongoose.Schema({
   content: {
     type: String,
     required: [true, "Please provide content"],
-    maxLength: 2000,
+    
   },
   author: {
     type: String,
