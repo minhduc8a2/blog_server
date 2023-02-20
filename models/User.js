@@ -9,7 +9,7 @@ const UserSchema = mongoose.Schema({
   },
   avatar: {
     type: String,
-    default: `${process.env.SERVER}/public/images/user/avatar/user.png`,
+    default: `https://dlogserver.onrender.com/public/images/user/avatar/user.png`,
     maxLength: 1000,
   },
   email: {

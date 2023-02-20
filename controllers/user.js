@@ -27,6 +27,7 @@ const login = async (req, res) => {
     let email = decoded.email;
     let password = decoded.password;
     const user = await User.findOne({ email, password });
+    
     if (user)
       res.status(200).json({
         msg: true,
@@ -37,6 +38,8 @@ const login = async (req, res) => {
   } else {
     if (!email || !password) {
       res.status(404).json({ msg: false, data: null });
+      console.log("no token, no signup")
+      return;
     }
     const token = jwt.sign({ email, password }, process.env.SECRET_KEY);
 
